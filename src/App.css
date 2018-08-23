@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: auto;
   padding: 20px;
   color: white;
 }
@@ -30,4 +30,19 @@
 h4.teams-tab {
   display: inline-block;
   padding-right: 5px;
+}
+.match-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid grey;
+  align-items: flex-start;
+  height: auto;
+  padding-top: 15px;
+}
+.match-container div {
+  width: 33.33%
+}
+.opponents {
+  display: flex;
+  flex-direction: row;
 }

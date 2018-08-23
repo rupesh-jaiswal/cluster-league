@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { Tabs, Tab, Badge} from 'react-bootstrap';
+import Matches from './matches';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -11,15 +12,15 @@ class App extends Component {
   }
   handleSelect = (key) => {
     this.setState({key});
-  }
+  };
+
   render() {
     const teams=(
       <div ><h4 className="teams-tab">Teams</h4><Badge>10</Badge></div>
-    )
+    );
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Cluster League</h1>
         </header>
         <div className="container">
@@ -29,7 +30,7 @@ class App extends Component {
             id="controlled-tab-example"
           >
             <Tab eventKey={1} title={<h4>Matches</h4>}>
-              Under construction
+              <Matches />
             </Tab>
             <Tab eventKey={2} title={<h4>Stats</h4>}>
               Tab 2 content
