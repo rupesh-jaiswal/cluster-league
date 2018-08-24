@@ -3,17 +3,21 @@ import React, { Component } from 'react';
 import './App.css';
 import { Tabs, Tab, Badge} from 'react-bootstrap';
 import Matches from './matches';
+import fixtures from './fixtures';
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      key: 1
+      key: 1,
+      matches: fixtures 
+
     }
   }
   handleSelect = (key) => {
     this.setState({key});
   };
 
+  
   render() {
     const teams=(
       <div ><h4 className="teams-tab">Teams</h4><Badge>10</Badge></div>
