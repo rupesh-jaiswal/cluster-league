@@ -17,6 +17,5 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "proxy": "http://cluster-league.d3m0li5h3r.com"
+  }
 }

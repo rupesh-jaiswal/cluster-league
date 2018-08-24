@@ -11,7 +11,30 @@ export default class Matches extends Component {
         }
     }
     componentDidMount() {
-        request.get('/fixtures')
+        const myApi = {
+            //baseURL: 'http://cluster-league.d3m0li5h3r.com',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            crossDomain: true,
+          };
+          /*
+          {headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }}
+          */
+        var config = {
+            method: 'GET',
+            url: '/fixtures'
+        };
+        console.log(axios.defaults.headers.common);
+        //axios.headers.baseURL="http://cluster-league.d3m0li5h3r.com";
+        axios.get('http://cluster-league.d3m0li5h3r.com/fixtures', myApi)
+        //.set({ 'Access-Control-Allow-Origin': '*',
+            //'Referer': 'http://cluster-league.d3m0li5h3r.com'
+        //})
         .then((response) => {
             console.log(response);
         })
@@ -19,7 +42,7 @@ export default class Matches extends Component {
     }
     renderMatches() {
         const matches = this.state.matches.map((match, index) => (
-            <div className="match-container">
+            <div className="match-container" key={index}>
                     <div className="date-container">
                         <h3>{ match.time }</h3>
                     </div>
