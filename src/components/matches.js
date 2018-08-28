@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import fixtures from './fixtures';
 import axios from 'axios';
 import request from 'superagent';
-export default class Matches extends Component {
+import { connect } from 'react-redux';
+import { getMatches } from '../actions/actions';
+export class Matches extends Component {
     constructor(props) {
         super(props);
-        console.log(fixtures);
-        this.state = {
-            matches: fixtures 
-        }
     }
     componentDidMount() {
-        const myApi = {
+        /*const myApi = {
             //baseURL: 'http://cluster-league.d3m0li5h3r.com',
             headers: {
               'Accept': 'application/json',
@@ -19,12 +16,12 @@ export default class Matches extends Component {
             },
             crossDomain: true,
           };
-          /*
+          
           {headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           }}
-          */
+          
         var config = {
             method: 'GET',
             url: '/fixtures'
@@ -39,9 +36,12 @@ export default class Matches extends Component {
             console.log(response);
         })
         .catch((error) => console.log(error));
+
+        */
+       this.props.dispatch(getMatches());
     }
     renderMatches() {
-        const matches = this.state.matches.map((match, index) => (
+        const matches = this.props.matches.map((match, index) => (
             <div className="match-container" key={index}>
                     <div className="date-container">
                         <h3>{ match.time }</h3>
@@ -70,3 +70,10 @@ export default class Matches extends Component {
 
     }
  }
+ function mapStateToProps(state) {
+     return {
+         matches: state.matches
+     }
+ }
+
+ export default connect(mapStateToProps)(Matches);
