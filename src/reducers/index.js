@@ -1,7 +1,8 @@
-import { MATCHES_FETCH_SUCCESS, TEAMS_FETCH_SUCCESS } from '../actions/actions';
+import { MATCHES_FETCH_SUCCESS, TEAMS_FETCH_SUCCESS,STATS_FETCH_SUCCESS } from '../actions/actions';
 const initialState = {
     matches: [],
-    teams: []
+    teams: [],
+    stats:[]
   };
   
   const handlers = {
@@ -11,6 +12,9 @@ const initialState = {
     }),
     [TEAMS_FETCH_SUCCESS]: (state, action) => ({
         teams: action.teams
+    }),
+    [STATS_FETCH_SUCCESS]: (state, action) => ({
+        stats: action.stats
     })
   };
   
