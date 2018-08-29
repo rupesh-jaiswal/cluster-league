@@ -18,6 +18,6 @@ TeamLogoName.propTypes={
     height: PropTypes.number
 }
 TeamLogoName.defaultProps = {
-    logo_url: "../img/default_icon.jpeg"
+    logo_url: "../../img/default_icon.jpg"
 }
 export default TeamLogoName;

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
-import './App.css';
+import '../styles/App.css';
 import { Tabs, Tab, Badge} from 'react-bootstrap';
 import Matches from './components/matches';
 import Teams from './components/teams';
 import Stats from './components/stats';
-import store from './store';
+import store from '../store';
 import { Provider } from 'react-redux';
 class App extends Component {
   constructor(props) {

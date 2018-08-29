@@ -45,7 +45,7 @@ export class Matches extends Component {
         const matches = this.props.matches.map((match, index) => (
             <div className="match-container" key={index}>
                     <div className="date-container">
-                        <h3>{ match.time }</h3>
+                        <h4>{ match.time }</h4>
                     </div>
                     <div className="opponents">
                         <TeamLogoName {...match.team1 }/>
