@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import teamLogo from '../../img/default_icon.jpeg';
 export class TeamLogoName extends Component {
     render() {
         return (
@@ -18,6 +19,6 @@ TeamLogoName.propTypes={
     height: PropTypes.number
 }
 TeamLogoName.defaultProps = {
-    logo_url: "../../img/default_icon.jpg"
+    logo_url: teamLogo
 }
 export default TeamLogoName;

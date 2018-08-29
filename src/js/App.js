@@ -21,7 +21,7 @@ class App extends Component {
   
   render() {
     const teams=(
-      <div ><h4 className="teams-tab">Teams</h4><Badge>4</Badge></div>
+      <div ><h4 className="teams-tab">Teams</h4><Badge>5</Badge></div>
     );
     return (
       <Provider store={store}>
