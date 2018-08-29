@@ -31,7 +31,7 @@ h4.teams-tab {
   display: inline-block;
   padding-right: 5px;
 }
-.match-container, .team-container {
+.match-container, .team-container, .stat-contanier, .stats-header {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid grey;
@@ -66,4 +66,18 @@ h4.teams-tab {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.stats-team-logo {
+  width: 40px;
+  height: 40px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+.stats-column1 {
+  display : flex;
+  flex-direction: row;
+  width: 60%;
+}
+.stats-header h4, .stat-contanier h4{
+  width: 5%;
 }

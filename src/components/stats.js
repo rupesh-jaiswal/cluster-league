@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-
+import { getStats } from '../actions/actions';
+import TeamLogoName from './team-logo-name';
 export class Stats extends Component {
     componentDidMount() {
         this.props.dispatch(getStats());
@@ -9,9 +10,21 @@ export class Stats extends Component {
     renderStat() {
         const stats = this.props.stats.map((stat, index) => {
             return (
-                <div className="stat-contanier">
-                    <h4>{stat.id} </h4>
-                    <h4>{stat.team.name}</h4>
+                <div className="stat-contanier" key={index}>
+                    <div className="stats-column1" >
+                        <h4>{stat.id} </h4>
+                        <TeamLogoName {...stat.team} />
+                    </div>
+                    <h4>{stat.played}</h4>
+                    <h4>{stat.won}</h4>
+                    <h4>{stat.lost}</h4>
+                    <h4>{stat.drawn}</h4>
+                    <h4>{stat.goals_for}</h4>
+                    <h4>{stat.goals_against}</h4>
+                    <h4>{stat.goals_for-stat.goals_against}</h4>
+                    <h4>{stat.points}</h4>
+
+
                 </div>
             )
         });
@@ -19,9 +32,26 @@ export class Stats extends Component {
     }
 
     render() {
-        <div className="stats-container">
-            {this.renderStat()}
-        </div>
+        return (
+            <React.Fragment>
+                
+                <div className="stats-container">
+                    
+                    <div className="stats-header">
+                            <div className="stats-column1" ><h4>Team</h4></div>
+                            <h4>MP</h4>
+                            <h4>W</h4>
+                            <h4>L</h4>
+                            <h4>D</h4>
+                            <h4>GF</h4>
+                            <h4>GA</h4>
+                            <h4>GD</h4>
+                            <h4>Pts</h4>
+                        </div>
+                    {this.renderStat()}
+                </div>
+            </React.Fragment>
+        );
     }
 }
 

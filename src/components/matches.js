@@ -3,6 +3,7 @@ import axios from 'axios';
 import request from 'superagent';
 import { connect } from 'react-redux';
 import { getMatches } from '../actions/actions';
+import TeamLogoName from './team-logo-name';
 export class Matches extends Component {
     constructor(props) {
         super(props);
@@ -47,17 +48,11 @@ export class Matches extends Component {
                         <h3>{ match.time }</h3>
                     </div>
                     <div className="opponents">
-                        <img src={match.team1.logo_url}
-                            height="50px"
-                            width="50px"/>
-                        <h4>{match.team1.name}</h4>
+                        <TeamLogoName {...match.team1 }/>
                     </div>
-                    <div><h3>VS</h3></div>
+                    <div><h4>VS</h4></div>
                     <div className="opponents">
-                        <img src={match.team2.logo_url}
-                            height="50px"
-                            width="50px"/>
-                        <h4>{match.team2.name}</h4>
+                        <TeamLogoName {...match.team2 }/>
                     </div>
                 </div>
         ));
