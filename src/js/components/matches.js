@@ -4,6 +4,7 @@ import request from 'superagent';
 import { connect } from 'react-redux';
 import { getMatches } from '../actions/actions';
 import TeamLogoName from './team-logo-name';
+import { formatDateTime } from '../utils/date-time';
 export class Matches extends Component {
     constructor(props) {
         super(props);
@@ -12,6 +13,7 @@ export class Matches extends Component {
         axios.get('http://cluster-league.d3m0li5h3r.com/fixtures')
         .then((response) => {
             console.log(response);
+            formatDateTime(response.data[0].time);
         })
         .catch((error) => console.log(error));
         /*const myApi = {
