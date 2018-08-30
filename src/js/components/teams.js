@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getTeams } from '../actions/actions';
+import teamLogo from '../../img/default_icon.jpeg';
 class Teams extends Component {
     componentDidMount() {
         this.props.dispatch(getTeams());
@@ -8,7 +9,7 @@ class Teams extends Component {
     renderteams() {
         const teams = this.props.teams.map((team, index) => (
             <div className="team-container" key={index}>
-                <img src={team.logo_url} 
+                <img src={team.logo_url || teamLogo} 
                     a11y={team.name}
                    />
                 <div className="team-data">

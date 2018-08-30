@@ -27,7 +27,7 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <header className="App-header">
-            <h1 className="App-title">Cluster League</h1>
+            <h1 className="App-title">Cluster Football League</h1>
           </header>
           <div className="container">
             <Tabs
