@@ -81,3 +81,28 @@ h4.teams-tab {
 .stats-header h4, .stat-contanier>h4{
   width: 5%;
 }
+.players-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.player-container {
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 3px #9e9e9e;
+  box-shadow: 0 1px 3px #9e9e9e;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px #9e9e9e;
+  /* display: inline-block; */
+  flex-grow: 1;
+  margin: 8px 4px 0;
+  /* position: relative; */
+  overflow: hidden;
+  vertical-align: top;
+  width: 140px;
+}
+.manager-info {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5px 5px 0;
+}

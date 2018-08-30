@@ -5,6 +5,7 @@ import { Tabs, Tab, Badge} from 'react-bootstrap';
 import Matches from './components/matches';
 import Teams from './components/teams';
 import Stats from './components/stats';
+import Players from './components/players';
 import store from '../store';
 import { Provider } from 'react-redux';
 class App extends Component {
@@ -43,6 +44,9 @@ class App extends Component {
               </Tab>
               <Tab eventKey={3} title={teams} >
                 <Teams />
+              </Tab>
+              <Tab eventKey={4} title={<h4>Players</h4>} >
+                <Players />
               </Tab>
             </Tabs>
           </div>

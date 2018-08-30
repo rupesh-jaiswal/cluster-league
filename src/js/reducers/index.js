@@ -1,8 +1,14 @@
-import { MATCHES_FETCH_SUCCESS, TEAMS_FETCH_SUCCESS,STATS_FETCH_SUCCESS } from '../actions/actions';
+import { 
+  MATCHES_FETCH_SUCCESS,
+  TEAMS_FETCH_SUCCESS,
+  STATS_FETCH_SUCCESS,
+  PLAYERS_FETCH_SUCCESS
+ } from '../actions/actions';
 const initialState = {
     matches: [],
     teams: [],
-    stats:[]
+    stats:[],
+    players: []
   };
   
   const handlers = {
@@ -15,7 +21,10 @@ const initialState = {
     }),
     [STATS_FETCH_SUCCESS]: (state, action) => ({
         stats: action.stats
-    })
+    }),
+    [PLAYERS_FETCH_SUCCESS]: (state, action) => ({
+      players: action.players
+  })
   };
   
   export default function indexReducer (state = initialState, action) {

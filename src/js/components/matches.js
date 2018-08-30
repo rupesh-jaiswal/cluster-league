@@ -9,6 +9,11 @@ export class Matches extends Component {
         super(props);
     }
     componentDidMount() {
+        axios.get('http://cluster-league.d3m0li5h3r.com/fixtures')
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => console.log(error));
         /*const myApi = {
             //baseURL: 'http://cluster-league.d3m0li5h3r.com',
             headers: {
