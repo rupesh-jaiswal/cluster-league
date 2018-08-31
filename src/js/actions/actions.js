@@ -38,9 +38,13 @@ export function getStats() {
         });
     }
 }
-export function getPlayers() {
+export function getPlayers(teamID) {
+    let teamsURL='';
+    if(teamID) {
+        teamsURL=`teams/${teamID}/`;
+    }
     return function(dispatch) {
-        return  axios.get('http://cluster-league.d3m0li5h3r.com/players')
+        return  axios.get(`http://cluster-league.d3m0li5h3r.com/${teamsURL}players`)
         .then((response) => {
             dispatch( {
                 type: PLAYERS_FETCH_SUCCESS,

@@ -61,6 +61,8 @@ h4.teams-tab {
   display: flex;
   flex-direction: row;
   padding-bottom: 15px;
+  color: #333;
+  text-decoration: none;
 }
 .team-data {
   display: flex;
@@ -105,4 +107,8 @@ h4.teams-tab {
   display: flex;
   justify-content: flex-end;
   padding: 0 5px 5px 0;
+}
+.team-container:hover {
+  background-color: lightgrey;
+  cursor: pointer;
 }

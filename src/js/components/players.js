@@ -4,7 +4,7 @@ import { getPlayers } from '../actions/actions';
 import Player from './player';
 export class Players extends Component {
     componentDidMount() {
-        this.props.dispatch(getPlayers());
+        this.props.dispatch(getPlayers(this.props.teamID));
     }
 
     renderPlayers() {
