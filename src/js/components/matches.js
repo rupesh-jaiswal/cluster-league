@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import request from 'superagent';
 import { connect } from 'react-redux';
 import { getMatches } from '../actions/actions';
 import TeamLogoName from './team-logo-name';
@@ -10,42 +8,6 @@ export class Matches extends Component {
         super(props);
     }
     componentDidMount() {
-        axios.get('http://cluster-league.d3m0li5h3r.com/fixtures')
-        .then((response) => {
-            console.log(response);
-            formatDateTime(response.data[0].time);
-        })
-        .catch((error) => console.log(error));
-        /*const myApi = {
-            //baseURL: 'http://cluster-league.d3m0li5h3r.com',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            crossDomain: true,
-          };
-          
-          {headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          }}
-          
-        var config = {
-            method: 'GET',
-            url: '/fixtures'
-        };
-        console.log(axios.defaults.headers.common);
-        //axios.headers.baseURL="http://cluster-league.d3m0li5h3r.com";
-        axios.get('http://cluster-league.d3m0li5h3r.com/fixtures', myApi)
-        //.set({ 'Access-Control-Allow-Origin': '*',
-            //'Referer': 'http://cluster-league.d3m0li5h3r.com'
-        //})
-        .then((response) => {
-            console.log(response);
-        })
-        .catch((error) => console.log(error));
-
-        */
        this.props.dispatch(getMatches());
     }
     renderMatches() {

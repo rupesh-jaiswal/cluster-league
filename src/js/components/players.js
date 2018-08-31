@@ -10,7 +10,7 @@ export class Players extends Component {
     renderPlayers() {
         const players = this.props.players.map((player) => {
             return (
-                <Player {...player} />
+                <Player {...player} key={player.id}/>
             );
         });
         return players;

@@ -1,32 +1,51 @@
-import fixtures from './api-data/fixtures';
-import teams from './api-data/teams';
-import stats from './api-data/stats';
-import players from './api-data/players';
+import axios from 'axios';
+
 export const MATCHES_FETCH_SUCCESS = 'MATCHES_FETCH_SUCCESS';
 export const TEAMS_FETCH_SUCCESS = 'TEAMS_FETCH_SUCCESS';
 export const STATS_FETCH_SUCCESS = 'STATS_FETCH_SUCCESS';
 export const PLAYERS_FETCH_SUCCESS = 'PLAYERS_FETCH_SUCCESS';
+
 export function getMatches() {
-    return {
-        type: MATCHES_FETCH_SUCCESS,
-        matches: fixtures
-    };
+    return function(dispatch) {
+        return  axios.get('http://cluster-league.d3m0li5h3r.com/fixtures')
+        .then((response) => {
+            dispatch( {
+                type: MATCHES_FETCH_SUCCESS,
+                matches: response.data
+            });
+        });
+    }
 }
 export function getTeams() {
-    return {
-        type: TEAMS_FETCH_SUCCESS,
-        teams: teams
-    };
+    return function(dispatch) {
+        return  axios.get('http://cluster-league.d3m0li5h3r.com/teams')
+        .then((response) => {
+            dispatch( {
+                type: TEAMS_FETCH_SUCCESS,
+                teams: response.data
+            });
+        });
+    }
 }
 export function getStats() {
-    return {
-        type: STATS_FETCH_SUCCESS,
-        stats: stats
-    };
+    return function(dispatch) {
+        return  axios.get('http://cluster-league.d3m0li5h3r.com/standings')
+        .then((response) => {
+            dispatch( {
+                type: STATS_FETCH_SUCCESS,
+                stats: response.data
+            });
+        });
+    }
 }
 export function getPlayers() {
-    return {
-        type: PLAYERS_FETCH_SUCCESS,
-        players: players
+    return function(dispatch) {
+        return  axios.get('http://cluster-league.d3m0li5h3r.com/players')
+        .then((response) => {
+            dispatch( {
+                type: PLAYERS_FETCH_SUCCESS,
+                players: response.data
+            });
+        });
     }
 }
