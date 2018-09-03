@@ -112,3 +112,6 @@ h4.teams-tab {
   background-color: lightgrey;
   cursor: pointer;
 }
+.modal-body .player-container {
+  flex-grow: 0;
+}

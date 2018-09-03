@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getTeams } from '../actions/actions';
+import { getTeams, getPlayers } from '../actions/actions';
 import teamLogo from '../../img/default_icon.jpeg';
 import PlayersModal from './players-modal';
 class Teams extends Component {
@@ -22,6 +22,7 @@ class Teams extends Component {
 
     handleClose = () => {
         this.setState({show: false});
+        this.props.dispatch(getPlayers());
     };
     renderteams() {
         const teams = this.props.teams.map((team, index) => (
