@@ -63,6 +63,7 @@ h4.teams-tab {
   padding-bottom: 15px;
   color: #333;
   text-decoration: none;
+  padding-left: 15px;  
 }
 .team-data {
   display: flex;
