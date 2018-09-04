@@ -5,11 +5,10 @@ import { Badge} from 'react-bootstrap';
 export default class Player extends Component {
     
     render() {
-        const { player } = this.props;
         return (
             <div className="player-container" key={this.props.id}>
                 <div className="personal info">
-                    <img src={this.props.photo_url} width="140px" height="140px"/>
+                    <img src={this.props.photo_url} width="140px" height="140px" alt={this.props.name}/>
                     <h5>{this.props.name}</h5>
                 </div>
                 <div className="professional-info">

@@ -5,7 +5,7 @@ export class TeamLogoName extends Component {
     render() {
         return (
             <React.Fragment>
-                <img src={this.props.logo_url} className="stats-team-logo"/>
+                <img src={this.props.logo_url} className="stats-team-logo" alt={this.props.name}/>
                 <h4>{this.props.name}</h4>
             </React.Fragment>
         );

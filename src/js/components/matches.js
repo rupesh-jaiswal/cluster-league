@@ -4,9 +4,6 @@ import { getMatches } from '../actions/actions';
 import TeamLogoName from './team-logo-name';
 import { formatDateTime } from '../utils/date-time';
 export class Matches extends Component {
-    constructor(props) {
-        super(props);
-    }
     componentDidMount() {
        this.props.dispatch(getMatches());
     }

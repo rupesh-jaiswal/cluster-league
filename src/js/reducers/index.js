@@ -2,13 +2,15 @@ import {
   MATCHES_FETCH_SUCCESS,
   TEAMS_FETCH_SUCCESS,
   STATS_FETCH_SUCCESS,
-  PLAYERS_FETCH_SUCCESS
+  PLAYERS_FETCH_SUCCESS,
+  SET_TAB_INDEX
  } from '../actions/actions';
 const initialState = {
     matches: [],
     teams: [],
     stats:[],
-    players: []
+    players: [],
+    tabIndex: 1
   };
   
   const handlers = {
@@ -24,7 +26,10 @@ const initialState = {
     }),
     [PLAYERS_FETCH_SUCCESS]: (state, action) => ({
       players: action.players
-  })
+    }),
+    [SET_TAB_INDEX]: (state, action) => ({
+      tabIndex: action.tabIndex
+    })
   };
   
   export default function indexReducer (state = initialState, action) {
