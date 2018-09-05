@@ -8,8 +8,8 @@ const PrimaryLayout = () => (
         <h1 className="App-title">Cluster Football League</h1>
         </header>
       <main>
-        <Route path="/" exact component={HomeComponent} />
-        <Route path="/teams/:id" component={TeamInfo} />
+        <Route path="/cluster-league" exact component={HomeComponent} />
+        <Route path="/cluster-league/teams/:id" component={TeamInfo} />
       </main>
     </div>
 );

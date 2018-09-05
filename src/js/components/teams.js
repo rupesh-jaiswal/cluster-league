@@ -17,7 +17,7 @@ class Teams extends Component {
     renderteams() {
         const teams = this.props.teams.map((team, index) => (
             <Link to={{
-                pathname: `teams/${team.id}`,
+                pathname: `/cluster-league/teams/${team.id}`,
                 state: { team: team }
               }}
              key={index}  >
