@@ -170,6 +170,9 @@ li.active>a:hover h4 {
     display: none;
   }
   .stats-column1 {
-    width: 40%;
+    width: 28%;
+  }
+  .stats-header h4, .stat-contanier>h4{
+    width: 9%;
   }
 }
