@@ -23,6 +23,8 @@ export class HomeComponent extends Component {
                 activeKey={this.props.tabIndex}
                 onSelect={this.handleSelect}
                 id="controlled-tab-example"
+                mountOnEnter={true}
+                unmountOnExit={true}
             >
                 <Tab eventKey={1} title={<h4>Matches</h4>}>
                 <Matches />

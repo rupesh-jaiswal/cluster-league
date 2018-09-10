@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getPlayers } from '../actions/actions';
+import { getPlayers, clearPlayers } from '../actions/actions';
 import Player from './player';
 export class Players extends Component {
     componentDidMount() {
         this.props.dispatch(getPlayers(this.props.teamID));
+    }
+    componentWillMount() {
+        this.props.dispatch(clearPlayers());
     }
 
     renderPlayers() {

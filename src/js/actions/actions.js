@@ -5,6 +5,7 @@ export const TEAMS_FETCH_SUCCESS = 'TEAMS_FETCH_SUCCESS';
 export const STATS_FETCH_SUCCESS = 'STATS_FETCH_SUCCESS';
 export const PLAYERS_FETCH_SUCCESS = 'PLAYERS_FETCH_SUCCESS';
 export const SET_TAB_INDEX = 'SET_TAB_INDEX';
+export const CLEAR_PLAYERS = 'CLEAR_PLAYERS';
 export function getMatches() {
     return function(dispatch) {
         return  axios.get('http://cluster-league.d3m0li5h3r.com/fixtures')
@@ -58,5 +59,10 @@ export function setTabIndex(tabIndex) {
     return {
         type: SET_TAB_INDEX,
         tabIndex: tabIndex
+    }
+}
+export function clearPlayers() {
+    return {
+        type: CLEAR_PLAYERS
     }
 }
