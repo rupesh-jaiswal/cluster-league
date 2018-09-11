@@ -10,17 +10,17 @@ export class Matches extends Component {
     renderMatches() {
         const matches = this.props.matches.map((match, index) => (
             <div className="match-container" key={index}>
-                    <div className="date-container">
-                        <h4>{ formatDateTime(match.time) }</h4>
-                    </div>
-                    <div className="opponents">
-                        <TeamLogoName {...match.team1 }/>
-                    </div>
-                    <div><h4>VS</h4></div>
-                    <div className="opponents">
-                        <TeamLogoName {...match.team2 }/>
-                    </div>
+                <div className="date-container">
+                    <h4>{ formatDateTime(match.time) }</h4>
                 </div>
+                <div className="opponents">
+                    <TeamLogoName {...match.team1 }/>
+                </div>
+                <div><h4>VS</h4></div>
+                <div className="opponents">
+                    <TeamLogoName {...match.team2 }/>
+                </div>
+            </div>
         ));
         return matches;
     }

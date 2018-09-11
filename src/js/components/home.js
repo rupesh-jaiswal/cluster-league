@@ -4,6 +4,7 @@ import Matches from './matches';
 import Teams from './teams';
 import Stats from './stats';
 import Players from './players';
+import Results from './results';
 import { setTabIndex } from '../actions/actions';
 import { connect } from 'react-redux';
 export class HomeComponent extends Component {
@@ -13,7 +14,6 @@ export class HomeComponent extends Component {
     
       
     render() {
-        console.log(this.props.tabIndex);
         const teams=(
             <div ><h4 className="teams-tab">Teams</h4><Badge>5</Badge></div>
         );
@@ -27,7 +27,10 @@ export class HomeComponent extends Component {
                 unmountOnExit={true}
             >
                 <Tab eventKey={1} title={<h4>Matches</h4>}>
-                <Matches />
+                <div>
+                    <Results />
+                    <Matches />
+                </div>
                 </Tab>
                 <Tab eventKey={2} title={<h4>Stats</h4>}>
                 <Stats />

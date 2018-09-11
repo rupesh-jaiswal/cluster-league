@@ -32,7 +32,7 @@ h4.teams-tab {
   display: inline-block;
   padding-right: 5px;
 }
-.match-container, .team-container, .stat-contanier, .stats-header, .team-info-header {
+.match-container, .team-container, .stat-contanier, .stats-header, .team-info-header, .result-container {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #ddd;
@@ -87,7 +87,7 @@ h4.teams-tab {
 .stats-header h4, .stat-contanier>h4{
   width: 5%;
 }
-.players-container{
+.players-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -154,9 +154,51 @@ li.active>a:hover h4 {
   color: white;
   margin-top: 7px;
 }
-
-
+.results-container>div {
+  width: 33.333%;
+}
+.results-opponents {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  border-right: 1px solid white;
+}
+.results-container {
+  display: flex;
+}
+.results-opponents .opponents {
+  display: flex;
+  flex-direction: row;
+}
+.opponents-scores {
+  display: flex;
+  justify-content: space-between;
+}
+.scores {
+  display: flex;
+}
+.scores h4 {
+  padding-right: 10px;
+}
+.scores i {
+  padding-top: 10px;
+  font-size: 150%;
+}
+.result-container .date-container {
+  width: 25%;
+}
 /*-------------------------Media Quesries--------------------------*/
+@media only screen and (max-width: 990px) {
+  .results-container>div {
+    width: 50%;
+    flex-grow: 1;
+  }
+  .results-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+  }
+}
 @media only screen and (max-width: 637px) {
   .match-container {
       flex-direction: column;
@@ -174,5 +216,11 @@ li.active>a:hover h4 {
   }
   .stats-header h4, .stat-contanier>h4{
     width: 9%;
+  }
+  .results-container>div {
+    width: 100%;
+  }
+  .results-container {
+    flex-direction: column
   }
 }
