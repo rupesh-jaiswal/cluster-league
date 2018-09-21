@@ -165,6 +165,7 @@ li.active>a:hover h4 {
 }
 .results-container {
   display: flex;
+  flex-wrap: wrap;
 }
 .results-opponents .opponents {
   display: flex;
