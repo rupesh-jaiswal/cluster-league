@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getStats } from '../actions/actions';
 import TeamLogoName from './team-logo-name';
+import PlayersGoal from "./players-goal";
 export class Stats extends Component {
     componentDidMount() {
         this.props.dispatch(getStats());
@@ -36,7 +37,7 @@ export class Stats extends Component {
             <React.Fragment>
                 
                 <div className="stats-container">
-                    
+                <h4 className="table-caption">League Standings</h4>
                     <div className="stats-header">
                             <div className="stats-column1" ><h4>Team</h4></div>
                             <h4>MP</h4>
@@ -50,6 +51,7 @@ export class Stats extends Component {
                         </div>
                     {this.renderStat()}
                 </div>
+                <PlayersGoal />
             </React.Fragment>
         );
     }

@@ -5,7 +5,8 @@ import {
   PLAYERS_FETCH_SUCCESS,
   SET_TAB_INDEX,
   CLEAR_PLAYERS,
-  RESULTS_FETCH_SUCCESS
+  RESULTS_FETCH_SUCCESS,
+  PLAYERS_GOALS_FETCH_SUCCESS
  } from '../actions/actions';
 const initialState = {
     matches: [],
@@ -13,7 +14,8 @@ const initialState = {
     stats:[],
     players: [],
     tabIndex: 1,
-    results: []
+    results: [],
+    playersGoals: []
   };
   
   const handlers = {
@@ -38,6 +40,9 @@ const initialState = {
     }),
     [RESULTS_FETCH_SUCCESS]: (state, action) => ({
       results: action.results
+    }),
+    [PLAYERS_GOALS_FETCH_SUCCESS]: (state, action) => ({
+      playersGoals: action.playersGoals
     })
     
 

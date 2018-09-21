@@ -7,6 +7,7 @@ export const PLAYERS_FETCH_SUCCESS = 'PLAYERS_FETCH_SUCCESS';
 export const SET_TAB_INDEX = 'SET_TAB_INDEX';
 export const CLEAR_PLAYERS = 'CLEAR_PLAYERS';
 export const RESULTS_FETCH_SUCCESS = 'RESULTS_FETCH_SUCCESS';
+export const PLAYERS_GOALS_FETCH_SUCCESS = 'PLAYERS_GOALS_FETCH_SUCCESS';
 export function getMatches() {
     return function(dispatch) {
         return  axios.get('http://cluster-league.d3m0li5h3r.com/fixtures')
@@ -71,10 +72,21 @@ export function getResults() {
     return function(dispatch) {
         return  axios.get('http://cluster-league.d3m0li5h3r.com/results')
         .then((response) => {
-            console.log(response);
             dispatch( {
                 type: RESULTS_FETCH_SUCCESS,
                 results: response.data
+            });
+        });
+    }
+}
+
+export function getPlayerGoals() {
+    return function(dispatch) {
+        return  axios.get('http://cluster-league.d3m0li5h3r.com/players/goals')
+        .then((response) => {
+            dispatch( {
+                type: PLAYERS_GOALS_FETCH_SUCCESS,
+                playersGoals: response.data
             });
         });
     }
