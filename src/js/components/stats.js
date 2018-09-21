@@ -12,7 +12,7 @@ export class Stats extends Component {
             return (
                 <div className="stat-contanier" key={index}>
                     <div className="stats-column1" >
-                        <h4>{stat.id} </h4>
+                        <h4>{index+1} </h4>
                         <TeamLogoName {...stat.team} />
                     </div>
                     <h4>{stat.played}</h4>
